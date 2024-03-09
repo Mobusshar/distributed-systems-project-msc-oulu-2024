@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "wktrqoBvR7N47dapBi7QoL3X3v7x5KvL3vrqb3FPfqVREePg3GIatdSsoS32PgiOYmCSRhDCrIDoYf2oGYWWaw==",
+  "success": true,
+  "projectFilePath": "D:\\University of Oulu\\Distributed Systems\\Project\\MessageBroker_1_RequestRecording\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\talha\\.nuget\\packages\\rabbitmq.client\\6.8.1\\rabbitmq.client.6.8.1.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
