@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MessageBroker_1_RequestRecording/MessageBroker_1/.vs
+/RabitMqConsumer/ConsoleApp1/.vs
+/Talha/PublisherFromDB/PublisherFromDB/.vs/PublisherFromDB
+/RabitMqConsumer/ConsoleApp2/.vs/ConsoleApp2/FileContentIndex
