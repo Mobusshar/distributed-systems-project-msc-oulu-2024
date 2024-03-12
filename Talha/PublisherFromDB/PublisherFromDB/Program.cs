@@ -73,10 +73,9 @@ class Program
 
                         Console.WriteLine($"Message sent with type {data.type}.");
 
-                        currentIndex = (currentIndex + 1) % exchanges.Count; // Round-robin index
+                        currentIndex = (currentIndex + 1) % exchanges.Count; 
 
                         data.Is_processed = true;
-                        //dbContext.SaveChanges();
                     }
                 }
 
