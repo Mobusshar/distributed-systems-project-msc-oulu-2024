@@ -14,10 +14,11 @@ public class MessageData
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    public string user_uuid { get; set; }
-    public string request_uuid { get; set; }
+    public string user_Id { get; set; }
+    public string request_url { get; set; }
     public int type { get; set; }
-    public string is_processed { get; set; }
+
+    public bool Is_processed = false;
 }
 
 // Define your DbContext using Entity Framework Core
@@ -26,7 +27,7 @@ public class AppDbContext : DbContext
     public DbSet<MessageData> Messages { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlServer("Server=MTALHAARSHAD;Database=PWPProject;Integrated Security=True;TrustServerCertificate=True;Encrypt=True;");
+        => options.UseSqlServer("Server=MTALHAARSHAD;Database=Messages;Integrated Security=True;TrustServerCertificate=True;Encrypt=True;");
 }
 
 class Program
@@ -39,7 +40,7 @@ class Program
         using (var channel = connection.CreateModel())
         {
             // Declare a queue
-            channel.QueueDeclare(queue: "message_queue",
+            channel.QueueDeclare(queue: "data_queue",
                                  durable: true,
                                  exclusive: false,
                                  autoDelete: false,
@@ -57,13 +58,13 @@ class Program
                 
                 using (var dbContext = new AppDbContext())
                 {
-                    dbContext.Messages.Add(messageData);
+                    dbContext.Messages.Add( messageData);
                     dbContext.SaveChanges();
                 }
             };
 
             // Start consuming messages from the queue
-            channel.BasicConsume(queue: "message_queue",
+            channel.BasicConsume(queue: "data_queue",
                                  autoAck: true,
                                  consumer: consumer);
 

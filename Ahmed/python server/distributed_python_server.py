@@ -5,17 +5,20 @@ import pika
 import json
 
 class DataInput(BaseModel):
-    user_id: str
+    user_Id: str
     request_url: str
     type: int
 
 def publish_to_queue(data):
     connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
     channel = connection.channel()
-    channel.queue_declare(queue='data_queue')
-    channel.basic_publish(exchange='', routing_key='data_queue', body=json.dumps(data))
+    channel.exchange_declare(exchange='direct_exchange', exchange_type='direct')
+    channel.queue_declare(queue='data_queue', durable=True)
+    channel.queue_bind(exchange='direct_exchange', queue='data_queue', routing_key=str(data['type']))
+    channel.basic_publish(exchange='direct_exchange', routing_key=str(data['type']), body=json.dumps(data))
     print(" [x] Sent message to queue")
     connection.close()
+
 
 app = FastAPI()
 
