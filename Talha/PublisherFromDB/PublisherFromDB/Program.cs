@@ -37,9 +37,8 @@ class Program
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
         {
-            var exchange1 = "exchange2";
-            var exchange2 = "exchange4";
-            var exchanges = new List<string> { exchange1, exchange2 };
+            var exchange1 = "exchange";
+            var exchanges = new List<string> { exchange1};
 
             // Declare the exchanges
             foreach (var exchange in exchanges)

@@ -45,7 +45,7 @@ class Program
         //using var dbContext = new AppDbContext();
 
         // Declare a direct exchange
-        var exchangeName = "exchange3";
+        var exchangeName = "exchange";
         var exchangeType = "direct";
 
         channel.ExchangeDeclare(exchange: exchangeName, type: exchangeType);
