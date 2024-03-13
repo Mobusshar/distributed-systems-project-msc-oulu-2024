@@ -13,7 +13,7 @@ class DataInput(BaseModel):
 
 
 def publish_to_queue(data):
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    connection = pika.BlockingConnection(pika.ConnectionParameters('host.docker.internal'))
     channel = connection.channel()
     channel.exchange_declare(exchange='direct_exchange', exchange_type='direct')
     channel.queue_declare(queue='data_queue', durable=True)
@@ -23,12 +23,21 @@ def publish_to_queue(data):
     connection.close()
 
 
+
+# def publish_to_queue(data):
+#     connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq'))
+#     channel = connection.channel()
+#     channel.queue_declare(queue='data_queue')
+#     channel.basic_publish(exchange='', routing_key='data_queue', body=json.dumps(data))
+#     print(" [x] Sent message to queue")
+#     connection.close()
+
 app = FastAPI()
 
 
 @app.post("/receive_data")
 async def read_root(data: DataInput):
-    response_object = {"success": False, "data": {}, "message": "message received"}
+    response_object = {"success": False, "data": {"id": socket.gethostname()}, "message": "message received"}
     print(f"Incoming request client:{data}")
     response_object['success'] = True
     publish_to_queue(data.dict())

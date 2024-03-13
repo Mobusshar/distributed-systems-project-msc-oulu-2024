@@ -17,8 +17,6 @@ public class MessageData
     public string user_Id { get; set; }
     public string request_url { get; set; }
     public int type { get; set; }
-
-    public bool Is_processed = false;
 }
 
 // Define your DbContext using Entity Framework Core
@@ -36,15 +34,23 @@ class Program
     {
         // Set up connection to RabbitMQ
         var factory = new ConnectionFactory() { HostName = "localhost" };
+
+        // Declare a direct exchange
+        var exchangeName = "direct_exchange";
+        var exchangeType = "direct";
+
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
         {
+            channel.ExchangeDeclare(exchange: exchangeName, type: exchangeType);
             // Declare a queue
             channel.QueueDeclare(queue: "data_queue",
                                  durable: true,
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);
+
+            channel.QueueBind(queue: "data_queue", exchange: exchangeName, routingKey: "1");
 
             // Create consumer to receive messages from the queue
             var consumer = new EventingBasicConsumer(channel);

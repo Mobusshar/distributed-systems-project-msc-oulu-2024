@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "djxP3oUfUwZ3ox14tB4PXL5D8x6glCaAwxxEG5vsAwI+1Kus5mVSwKFPbqU1JXR/EsMXpgzO7XF2ZJpr1oJt4Q==",
+  "dgSpecHash": "CCZt68U3n+juKtY94oehCQJflhG/JtfnZVXywAQxmuRgWS0ViKfWb7cEw8VkNJmJzbutlFSd1uvY1XjekAxOFg==",
   "success": true,
-  "projectFilePath": "D:\\University of Oulu\\Distributed Systems\\Project\\RabitMqConsumer\\ConsoleApp1\\ConsoleApp1.csproj",
+  "projectFilePath": "D:\\University of Oulu\\Distributed Systems\\Project\\Talha\\RabitMqConsumer\\ConsoleApp1\\ConsoleApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talha\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

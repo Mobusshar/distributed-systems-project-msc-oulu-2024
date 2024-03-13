@@ -2859,11 +2859,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University of Oulu\\Distributed Systems\\Project\\MessageBroker_1_RequestRecording\\MessageBroker_1\\MessageBroker_1.csproj",
+      "projectUniqueName": "D:\\University of Oulu\\Distributed Systems\\Project\\Talha\\MessageBroker_1_RequestRecording\\MessageBroker_1\\MessageBroker_1.csproj",
       "projectName": "MessageBroker_1",
-      "projectPath": "D:\\University of Oulu\\Distributed Systems\\Project\\MessageBroker_1_RequestRecording\\MessageBroker_1\\MessageBroker_1.csproj",
+      "projectPath": "D:\\University of Oulu\\Distributed Systems\\Project\\Talha\\MessageBroker_1_RequestRecording\\MessageBroker_1\\MessageBroker_1.csproj",
       "packagesPath": "C:\\Users\\talha\\.nuget\\packages\\",
-      "outputPath": "D:\\University of Oulu\\Distributed Systems\\Project\\MessageBroker_1_RequestRecording\\MessageBroker_1\\obj\\",
+      "outputPath": "D:\\University of Oulu\\Distributed Systems\\Project\\Talha\\MessageBroker_1_RequestRecording\\MessageBroker_1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

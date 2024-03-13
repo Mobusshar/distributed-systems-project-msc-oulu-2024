@@ -9,6 +9,12 @@ services:
     command: sh -c "uvicorn distributed_python_server:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8001:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # Add this line to allow communication with RabbitMQ on localhost
+    environment:
+      - RABBITMQ_HOST=host.docker.internal  # Pass RabbitMQ host as environment variable
+    depends_on:
+      - rabbitmq
 
   app2:
     build:
@@ -18,6 +24,12 @@ services:
     command: sh -c "uvicorn distributed_python_server:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8002:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # Add this line to allow communication with RabbitMQ on localhost
+    environment:
+      - RABBITMQ_HOST=host.docker.internal  # Pass RabbitMQ host as environment variable
+    depends_on:
+      - rabbitmq
 
   app3:
     build:
@@ -27,6 +39,19 @@ services:
     command: sh -c "uvicorn distributed_python_server:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8003:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # Add this line to allow communication with RabbitMQ on localhost
+    environment:
+      - RABBITMQ_HOST=host.docker.internal  # Pass RabbitMQ host as environment variable
+    depends_on:
+      - rabbitmq
+
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 
   nginx:
     image: nginx:alpine
