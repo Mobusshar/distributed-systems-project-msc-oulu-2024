@@ -7,5 +7,4 @@ mysql-connector-python
 PyJWT
 bcrypt
 python-multipart
-pymssql
 pyodbc

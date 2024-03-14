@@ -8,7 +8,6 @@ import jwt
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 import mysql.connector
 import bcrypt
-import pymssql
 import pyodbc
 
 
