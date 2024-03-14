@@ -131,7 +131,7 @@ def send_request(url, user_id, request_url, type,callback):
     return result
 
 
-for i in range(1):
+for i in range(100):
     result = send_request("http://127.0.0.1:8000/receive_data", str(uuid.uuid4()), domains[i], 1,"http://127.0.0.1:8005/callback")
     id = result['data']["id"]
     if data.get(id):

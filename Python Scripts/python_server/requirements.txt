@@ -2,3 +2,10 @@ fastapi==0.110.0
 pika==1.3.2
 pydantic==2.6.3
 uvicorn
+passlib
+mysql-connector-python
+PyJWT
+bcrypt
+python-multipart
+pymssql
+pyodbc
