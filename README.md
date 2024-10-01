@@ -150,6 +150,6 @@ The system has been tested for fault tolerance using the following simulations:
 
 ## License
 
-This project is distributed under the MIT License. See the `LICENSE` file for more details.
+This project is distributed under the MIT License.
 
 
