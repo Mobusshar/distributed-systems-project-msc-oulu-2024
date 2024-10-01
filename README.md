@@ -30,8 +30,6 @@ The system's main objective is to handle high volumes of client requests in an e
 | Muhammad Ahmed        | 2304796    | mahmed23@student.oulu.fi               | Corporate |
 | Muhammad Talha Arshad | 2304797    | Muhammad.arshad@student.oulu.fi        | Corporate |
 
-Github Repository: [Distributed Systems Project](https://github.com/Mobusshar/distributed-systems-project-msc-oulu-2024.git)
-
 ## System Architecture
 
 The system is designed with an **Event-Driven Architecture (EDA)**. Nodes send requests to a load balancer, which distributes them across multiple servers using algorithms such as **Weighted Round Robin**. The backend infrastructure consists of Dockerized services, Nginx for load balancing, and RabbitMQ for message queuing.
